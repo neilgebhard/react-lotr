@@ -7,6 +7,8 @@ type CharacterItemProps = {
 export default function CharacterItem({ character }: CharacterItemProps) {
   return (
     <dl>
+      <dt>Name</dt>
+      <dd>{character.name}</dd>
       <dt>Birth</dt>
       <dd>{character.birth}</dd>
       <dt>Death</dt>
