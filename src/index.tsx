@@ -8,6 +8,8 @@ import Books from "./Books";
 import Book from "./Book";
 import Movies from "./Movies";
 import Movie from "./Movie";
+import Characters from "./Characters";
+import Character from "./Character";
 import "./index.css";
 
 axios.defaults.baseURL = "https://the-one-api.dev/v2";
@@ -22,6 +24,8 @@ ReactDOM.render(
         <Route path="books/:bookId" element={<Book />} />
         <Route path="movies" element={<Movies />} />
         <Route path="movies/:movieId" element={<Movie />} />
+        <Route path="characters" element={<Characters />} />
+        <Route path="characters/:characterId" element={<Character />} />
       </Route>
     </Routes>
   </BrowserRouter>,

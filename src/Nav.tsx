@@ -13,6 +13,9 @@ export default function Nav() {
         <li>
           <Link to="/movies">Movies</Link>
         </li>
+        <li>
+          <Link to="/characters">Characters</Link>
+        </li>
       </ul>
     </nav>
   );

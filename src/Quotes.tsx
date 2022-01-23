@@ -10,7 +10,7 @@ export default function Quotes() {
   useEffect(() => {
     const fetchQuotes = async () => {
       const res = await axios.get(`/movie/${movieId}/quote`);
-      setQuotes(res.data.docs.slice(0, 20));
+      setQuotes(res.data.docs);
     };
     fetchQuotes();
   }, [movieId]);
