@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import type { Movie } from "./types";
+import MovieItem from "./MovieItem";
+import type { Movie } from "../types";
 
-export default function Movies() {
+export default function MovieList() {
   const [movies, setMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
@@ -16,15 +16,10 @@ export default function Movies() {
   }, []);
 
   return (
-    <>
-      <h1>Movies</h1>
-      <ul>
-        {movies.map((movie) => (
-          <li>
-            <Link to={`/movies/${movie._id}`}>{movie.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </>
+    <ul>
+      {movies.map((movie) => (
+        <MovieItem key={movie._id} movie={movie} />
+      ))}
+    </ul>
   );
 }

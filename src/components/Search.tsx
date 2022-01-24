@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import CharacterItem from "./CharacterItem";
-import type { Character } from "./types";
+import type { Character } from "../types";
 
 export default function Search() {
   const [term, setTerm] = useState("");
@@ -22,7 +22,6 @@ export default function Search() {
 
   return (
     <>
-      <h1>Character Search</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

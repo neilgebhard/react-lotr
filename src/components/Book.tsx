@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import type { Book, Chapter } from "./types";
+import type { Book, Chapter } from "../types";
 
 export default function App() {
   let { bookId } = useParams();

@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Quotes from "./Quotes";
-import type { Movie as TMovie } from "./types";
+import QuoteList from "./QuoteList";
+import type { Movie as TMovie } from "../types";
 
 export default function Movie() {
   let { movieId } = useParams();
@@ -19,7 +19,7 @@ export default function Movie() {
   return (
     <>
       {movie && <h1>{movie.name}</h1>}
-      <Quotes />
+      <QuoteList />
     </>
   );
 }

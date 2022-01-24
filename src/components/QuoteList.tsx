@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import type { Quote } from "./types";
+import QuoteItem from "./QuoteItem";
+import type { Quote } from "../types";
 
-export default function Quotes() {
+export default function QuoteList() {
   let { movieId } = useParams();
   const [quotes, setQuotes] = useState<Quote[]>([]);
 
@@ -17,9 +18,8 @@ export default function Quotes() {
 
   return (
     <>
-      <h2>Quotes</h2>
       {quotes.map((quote) => (
-        <blockquote>{quote.dialog}</blockquote>
+        <QuoteItem key={quote._id} quote={quote} />
       ))}
     </>
   );
