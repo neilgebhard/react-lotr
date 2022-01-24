@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import CharacterItem from "./CharacterItem";
 import type { Character } from "../types";
 
@@ -7,7 +7,7 @@ export default function Search() {
   const [term, setTerm] = useState("");
   const [character, setCharacter] = useState<Character | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const fetchCharacter = async () => {
       const res = await axios.get("/character", {

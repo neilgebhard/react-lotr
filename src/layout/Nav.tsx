@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/auth";
+import Logout from "../components/Logout";
 
 export default function Nav() {
+  const { name } = useAuth()!;
+
   return (
     <nav>
       <ul>
@@ -19,6 +23,22 @@ export default function Nav() {
         <li>
           <Link to="/search">Search</Link>
         </li>
+      </ul>
+      <ul>
+        {name ? (
+          <>
+            <li>
+              <Link to="profile">{name}</Link>
+            </li>
+            <li>
+              <Logout />
+            </li>
+          </>
+        ) : (
+          <li>
+            <Link to="login">Login</Link>
+          </li>
+        )}
       </ul>
     </nav>
   );

@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import axios from "axios";
 import Home from "./pages/HomePage";
+import ProfilePage from "./pages/ProfilePage";
 import Layout from "./layout/Layout";
 import BooksPage from "./pages/BooksPage";
 import BookPage from "./pages/BookPage";
@@ -9,6 +10,7 @@ import MoviePage from "./pages/MoviePage";
 import CharactersPage from "./pages/CharactersPage";
 import CharacterPage from "./pages/CharacterPage";
 import SearchPage from "./pages/SearchPage";
+import LoginPage from "./pages/LoginPage";
 
 axios.defaults.baseURL = "https://the-one-api.dev/v2";
 axios.defaults.headers.common["Authorization"] = "Bearer _6uvQZVrAykosT1oitLl";
@@ -19,6 +21,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="login" element={<LoginPage />} />
+          <Route path="profile" element={<ProfilePage />} />
           <Route path="books" element={<BooksPage />} />
           <Route path="books/:bookId" element={<BookPage />} />
           <Route path="movies" element={<MoviesPage />} />

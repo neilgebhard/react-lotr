@@ -18,6 +18,7 @@ export default function QuoteList() {
 
   return (
     <>
+      <h2>Quotes</h2>
       {quotes.map((quote) => (
         <QuoteItem key={quote._id} quote={quote} />
       ))}
