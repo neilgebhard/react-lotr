@@ -9,7 +9,11 @@ export default function LoginPage() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    login(nameRef.current!.value);
+    const name = nameRef.current!.value.trim();
+
+    if (!name) return;
+
+    login(name);
     navigate("/");
   };
 
